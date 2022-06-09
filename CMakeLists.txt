@@ -27,6 +27,9 @@ set(SRV_FILES
   GetObjectInfo.srv
   UpdateRvizMarkers.srv
   GetAttachedObjects.srv
+  GlobalPathNeeded.srv
+  #GetPreGraspOrientation.srv
+  #GetPreGrasp.srv
 )
 
 set(ACT_FILES
