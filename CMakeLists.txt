@@ -23,13 +23,11 @@ set(MSG_FILES
 
 set(SRV_FILES
   UpdateWorld.srv
-  GetObjectNames.srv
-  GetObjectInfo.srv
-  UpdateRvizMarkers.srv
-  GetAttachedObjects.srv
+  DyeGroup.srv
+  GetGroupInfo.srv
+  GetGroupNames.srv
+  RegisterGroup.srv
   GlobalPathNeeded.srv
-  #GetPreGraspOrientation.srv
-  #GetPreGrasp.srv
 )
 
 set(ACT_FILES
