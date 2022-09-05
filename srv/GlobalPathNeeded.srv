@@ -1,0 +1,9 @@
+string root_link # root_link of the robot
+string tip_link # tip link of the robot
+geometry_msgs/Pose pose_goal # must be in map
+string env_group # other collision group
+bool simple
+
+---
+
+bool needed
