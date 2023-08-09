@@ -3,24 +3,20 @@
 # definitions of possible values to use as type
 # the following types can be added to create new combinations. e.g. PLAN_AND_EXECUTE = PLAN_ONLY + EXECUTE
 int64 UNDEFINED=0
-int64 PLAN_ONLY=1 
-int64 CHECK_REACHABILITY=2 # don't use on its own! Different planning parameters that speed up planning but don't create nice trajectories, don't use with execute!
-int64 EXECUTE=4 # don't use on its own! Result gets send to the robot
-int64 SKIP_FAILURES=8 # don't use on its own! If there are multiple move commands, failures are skipped.
-int64 CUT_OFF_SHAKING=16 # don't use on its own! If endless shaking is detected, the size of the detection window is cut off from the trajectory and it is executed anyway
+int64 EXECUTE=1 
+int64 PROJECTION=2
+int64 LOCAL_MINIMUM_IS_SUCCESS=4 # don't use on its own! 
 
 # predefined combinations
-int64 PLAN_AND_CHECK_REACHABILITY=3
-int64 PLAN_AND_EXECUTE=5
-int64 PLAN_AND_SKIP_FAILURES=9
-int64 PLAN_AND_EXECUTE_AND_SKIP_FAILURES=13
-int64 PLAN_AND_EXECUTE_AND_CUT_OFF_SHAKING=21
+int64 PLAN_AND_EXECUTE=1
+int64 EXECUTE_AND_LOCAL_MINIMUM_IS_SUCCESS=5
+int64 PLAN_AND_LOCAL_MINIMUM_IS_SUCCESS=6
 
 # use one of the above constants to indicate the goal type
 int64 type
 
 # sequence of movement commands to execute
-giskard_msgs/MoveCmd[] cmd_seq  
+giskard_msgs/MoveCmd move_cmd
 ---
 # result
 
@@ -31,7 +27,6 @@ int64 PREEMPTED=2 # if no code fits
 
 # solver exceptions
 int64 QP_SOLVER_ERROR=10 # if no solver code fits
-int64 MAX_NWSR_REACHED=11 # increasing NWSR in config file might fix this
 int64 OUT_OF_JOINT_LIMITS=12
 int64 HARD_CONSTRAINTS_VIOLATED=13 # conflicting hard constraints, probably because of collision avoidance
 int64 EMPTY_PROBLEM=14
@@ -49,14 +44,16 @@ int64 INVALID_GOAL=33
 # errors during planning
 int64 PLANNING_ERROR=40 # if no planning code fits
 int64 SHAKING=41 # Planning was stopped because the trajectory contains a shaky velocity profile. Detection parameters can be tuned in config file
-int64 UNREACHABLE=42 # if reachability check fails
-int64 SELF_COLLISION_VIOLATED=43 # if reachability check fails
+int64 SELF_COLLISION_VIOLATED=43 # if the robots links overlap
+int64 LOCAL_MINIMUM=43 # if the solver reached a local minimum
 
 # errors during execution
 int64 EXECUTION_ERROR=500 # if no execution code fits
 int64 EXECUTION_PREEMPTED=501 # goal got canceled via action server interface
 int64 EXECUTION_TIMEOUT=502 
 int64 EXECUTION_SUCCEEDED_PREMATURELY=503
+
+# follow joint trajectory server exceptions 
 int64 FollowJointTrajectory_INVALID_GOAL=510 
 int64 FollowJointTrajectory_INVALID_JOINTS=511 
 int64 FollowJointTrajectory_OLD_HEADER_TIMESTAMP=512 
@@ -64,9 +61,8 @@ int64 FollowJointTrajectory_PATH_TOLERANCE_VIOLATED=513
 int64 FollowJointTrajectory_GOAL_TOLERANCE_VIOLATED=514 
 
 # error codes and messages for each command
-int64[] error_codes
-
-string[] error_messages
+int64 error_code
+string error_message
 
 # planned trajectory
 trajectory_msgs/JointTrajectory trajectory
@@ -78,8 +74,5 @@ int64 UNDEFINED=0
 int64 PLANNING=2
 int64 EXECUTION=3
 int64 IDLE=1
-
-# cmd that is currently being planned
-int64 cmd_id
 
 int64 state
