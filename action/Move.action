@@ -3,14 +3,14 @@
 # definitions of possible values to use as type
 # the following types can be added to create new combinations. e.g. PLAN_AND_EXECUTE = PLAN_ONLY + EXECUTE
 int64 UNDEFINED=0
-int64 EXECUTE=1 
-int64 PROJECTION=2
+int64 EXECUTE=1 # closed loop -> execute in real time; open loop -> plan and execute
+int64 PROJECTION=2 # plan only
 int64 LOCAL_MINIMUM_IS_SUCCESS=4 # don't use on its own! 
 
 # predefined combinations
 int64 PLAN_AND_EXECUTE=1
 int64 EXECUTE_AND_LOCAL_MINIMUM_IS_SUCCESS=5
-int64 PLAN_AND_LOCAL_MINIMUM_IS_SUCCESS=6
+int64 PROJECTION_AND_LOCAL_MINIMUM_IS_SUCCESS=6
 
 # use one of the above constants to indicate the goal type
 int64 type
