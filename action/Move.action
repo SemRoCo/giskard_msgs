@@ -5,15 +5,13 @@
 int64 UNDEFINED=0
 int64 EXECUTE=1 # closed loop -> execute in real time; open loop -> plan and execute
 int64 PROJECTION=2 # plan only
-int64 LOCAL_MINIMUM_IS_SUCCESS=4 # don't use on its own! 
 
 # predefined combinations
 int64 PLAN_AND_EXECUTE=1
-int64 EXECUTE_AND_LOCAL_MINIMUM_IS_SUCCESS=5
-int64 PROJECTION_AND_LOCAL_MINIMUM_IS_SUCCESS=6
 
 # use one of the above constants to indicate the goal type
 int64 type
+bool local_minimum_is_success
 
 # sequence of movement commands to execute
 giskard_msgs/MoveCmd move_cmd
@@ -26,26 +24,28 @@ int64 ERROR=1 # if no code fits
 int64 PREEMPTED=2 # if no code fits
 
 # solver exceptions
-int64 QP_SOLVER_ERROR=10 # if no solver code fits
-int64 OUT_OF_JOINT_LIMITS=12
-int64 HARD_CONSTRAINTS_VIOLATED=13 # conflicting hard constraints, probably because of collision avoidance
-int64 EMPTY_PROBLEM=14
+int64 QP_SOLVER_ERROR=100 # if no solver code fits
+int64 OUT_OF_JOINT_LIMITS=102
+int64 HARD_CONSTRAINTS_VIOLATED=103 # conflicting hard constraints, probably because of collision avoidance
+int64 EMPTY_PROBLEM=104
+int64 INFEASIBLE=105
+int64 VELOCITYLIMITUNREACHABLE=106
 
 # world state exceptions
-int64 WORLD_ERROR=20 # if no world error fits
-int64 UNKNOWN_GROUP=21
+int64 WORLD_ERROR=200 # if no world error fits
+int64 UNKNOWN_GROUP=201
 
 # error during motion problem building phase
-int64 CONSTRAINT_ERROR=30 # if no constraint code fits
-int64 UNKNOWN_CONSTRAINT=31
-int64 CONSTRAINT_INITIALIZATION_ERROR=32
-int64 INVALID_GOAL=33
+int64 CONSTRAINT_ERROR=300 # if no constraint code fits
+int64 UNKNOWN_CONSTRAINT=301
+int64 CONSTRAINT_INITIALIZATION_ERROR=302
+int64 INVALID_GOAL=303
 
-# errors during planning
-int64 PLANNING_ERROR=40 # if no planning code fits
-int64 SHAKING=41 # Planning was stopped because the trajectory contains a shaky velocity profile. Detection parameters can be tuned in config file
-int64 SELF_COLLISION_VIOLATED=43 # if the robots links overlap
-int64 LOCAL_MINIMUM=43 # if the solver reached a local minimum
+# errors during planning or control
+int64 CONTROL_ERROR=400
+int64 SHAKING=401 # not used at the moment
+int64 SELF_COLLISION_VIOLATED=402
+int64 LOCAL_MINIMUM=403 # if the solver reached a local minimum
 
 # errors during execution
 int64 EXECUTION_ERROR=500 # if no execution code fits
@@ -59,6 +59,8 @@ int64 FollowJointTrajectory_INVALID_JOINTS=511
 int64 FollowJointTrajectory_OLD_HEADER_TIMESTAMP=512 
 int64 FollowJointTrajectory_PATH_TOLERANCE_VIOLATED=513 
 int64 FollowJointTrajectory_GOAL_TOLERANCE_VIOLATED=514 
+
+int64 BEHAVIOR_TREE_ERROR=600
 
 # error codes and messages for each command
 int64 error_code
