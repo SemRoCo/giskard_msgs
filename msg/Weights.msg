@@ -3,8 +3,3 @@ float32 WEIGHT_BELOW_CA = 1
 float32 WEIGHT_COLLISION_AVOIDANCE = 50
 float32 WEIGHT_ABOVE_CA = 2500
 float32 WEIGHT_MAX = 10000
-
-# a string identifying the expression behind the constraint
-string type
-
-string parameter_value_pair # json

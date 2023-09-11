@@ -15,10 +15,11 @@ set(MSG_DEPS
 )
 
 set(MSG_FILES
+  Weights.msg
+  MotionGoal.msg
+  Monitor.msg
   CollisionEntry.msg
-  Constraint.msg
   WorldBody.msg
-  MoveCmd.msg
  )
 
 set(SRV_FILES
