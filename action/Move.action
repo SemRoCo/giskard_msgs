@@ -6,14 +6,12 @@ int64 UNDEFINED=0
 int64 EXECUTE=1 # closed loop -> execute in real time; open loop -> plan and execute
 int64 PROJECTION=2 # plan only
 
-# predefined combinations
+# for downward compatibility
 int64 PLAN_AND_EXECUTE=1
 
 # use one of the above constants to indicate the goal type
 int64 type
-bool local_minimum_is_success
 
-# sequence of movement commands to execute
 # Set of controllers that need to converge for this command to finish
 giskard_msgs/MotionGoal[] goals
 giskard_msgs/Monitor[] monitors
