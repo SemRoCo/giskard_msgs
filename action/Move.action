@@ -16,9 +16,6 @@ int64 type
 giskard_msgs/MotionGoal[] goals
 giskard_msgs/Monitor[] monitors
 
-# Set of special collision states that shall hold during the movement
-giskard_msgs/CollisionEntry[] collisions
-
 ---
 # result
 
