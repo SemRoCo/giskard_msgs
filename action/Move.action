@@ -6,13 +6,10 @@ int64 UNDEFINED=0
 int64 EXECUTE=1 # closed loop -> execute in real time; open loop -> plan and execute
 int64 PROJECTION=2 # plan only
 
-# for downward compatibility
-int64 PLAN_AND_EXECUTE=1
-
 # use one of the above constants to indicate the goal type
 int64 type
 
-# Set of controllers that need to converge for this command to finish
+# describe a motion with a list of motion goals and monitors
 giskard_msgs/MotionGoal[] goals
 giskard_msgs/Monitor[] monitors
 
@@ -32,7 +29,7 @@ int64 EMPTY_PROBLEM=104
 int64 INFEASIBLE=105
 int64 VELOCITY_LIMIT_UNREACHABLE=106
 
-# world state exceptions
+# world exceptions
 int64 WORLD_ERROR=200 # if no world error fits
 int64 UNKNOWN_GROUP=201
 
@@ -46,7 +43,7 @@ int64 INVALID_GOAL=303
 int64 CONTROL_ERROR=400
 int64 SHAKING=401 # not used at the moment
 int64 SELF_COLLISION_VIOLATED=402
-int64 LOCAL_MINIMUM=403 # if the solver reached a local minimum
+int64 LOCAL_MINIMUM=403 # if the solver reached an unwanted local minimum
 
 # errors during execution
 int64 EXECUTION_ERROR=500 # if no execution code fits
@@ -54,7 +51,7 @@ int64 EXECUTION_PREEMPTED=501 # goal got canceled via action server interface
 int64 EXECUTION_TIMEOUT=502 
 int64 EXECUTION_SUCCEEDED_PREMATURELY=503
 
-# follow joint trajectory server exceptions 
+# forwarded follow joint trajectory server exceptions 
 int64 FollowJointTrajectory_INVALID_GOAL=510 
 int64 FollowJointTrajectory_INVALID_JOINTS=511 
 int64 FollowJointTrajectory_OLD_HEADER_TIMESTAMP=512 

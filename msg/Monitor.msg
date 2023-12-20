@@ -1,5 +1,4 @@
-# a string identifying the expression behind the constraint
-string name
-string type
+string name # unique identifier of the monitor
+string monitor_class # class name of the monitor
 
-string parameter_value_pair # json
+string kwargs # kwargs for the __init__ function of the monitor class in json format
