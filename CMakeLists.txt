@@ -18,6 +18,7 @@ set(MSG_FILES
   Weights.msg
   MotionGoal.msg
   Monitor.msg
+  Callback.msg
   CollisionEntry.msg
   WorldBody.msg
  )
