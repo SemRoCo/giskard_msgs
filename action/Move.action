@@ -32,18 +32,25 @@ int64 VELOCITY_LIMIT_UNREACHABLE=106
 # world exceptions
 int64 WORLD_ERROR=200 # if no world error fits
 int64 UNKNOWN_GROUP=201
+int64 UNKNOWN_LINK=202
+int64 UNKNOWN_JOINT=203
 
 # error during motion problem building phase
-int64 CONSTRAINT_ERROR=300 # if no constraint code fits
-int64 UNKNOWN_CONSTRAINT=301
-int64 CONSTRAINT_INITIALIZATION_ERROR=302
-int64 INVALID_GOAL=303
+int64 MOTION_PROBLEM_BUILDING_ERROR=300 # if no constraint code fits
+int64 INVALID_GOAL=301
+
+int64 UNKNOWN_GOAL=310
+int64 GOAL_INITIALIZATION_ERROR=311
+
+int64 UNKNOWN_MONITOR=320
+int64 MONITOR_INITIALIZATION_ERROR=321
 
 # errors during planning or control
 int64 CONTROL_ERROR=400
 int64 SHAKING=401 # not used at the moment
 int64 SELF_COLLISION_VIOLATED=402
 int64 LOCAL_MINIMUM=403 # if the solver reached an unwanted local minimum
+int64 MAX_TRAJECTORY_LENGTH=404 # if the solver reached an unwanted local minimum
 
 # errors during execution
 int64 EXECUTION_ERROR=500 # if no execution code fits
@@ -58,7 +65,12 @@ int64 FollowJointTrajectory_OLD_HEADER_TIMESTAMP=512
 int64 FollowJointTrajectory_PATH_TOLERANCE_VIOLATED=513 
 int64 FollowJointTrajectory_GOAL_TOLERANCE_VIOLATED=514 
 
+# behavior tree exceptions
 int64 BEHAVIOR_TREE_ERROR=600
+
+# other exceptions
+int64 DUPLICATE_NAME=700
+int64 SETUP_ERROR=70
 
 # error codes and messages for each command
 int64 error_code
