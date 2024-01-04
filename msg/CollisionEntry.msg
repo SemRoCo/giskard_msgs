@@ -1,8 +1,7 @@
 # definitions of possible collision types to use for value
 uint8 AVOID_COLLISION=0
 uint8 ALLOW_COLLISION=1
-# uint8 ATTRACT=4
-# uint8 REPELL=5
+
 # this means empty string
 string ALL= 
 
