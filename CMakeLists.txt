@@ -32,6 +32,7 @@ set(SRV_FILES
 
 set(ACT_FILES
   Move.action
+  World.action
 )
 
 find_package(catkin REQUIRED COMPONENTS
