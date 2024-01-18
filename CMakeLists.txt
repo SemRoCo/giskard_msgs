@@ -15,6 +15,7 @@ set(MSG_DEPS
 )
 
 set(MSG_FILES
+  GiskardError.msg
   Weights.msg
   MotionGoal.msg
   Monitor.msg
@@ -23,11 +24,9 @@ set(MSG_FILES
  )
 
 set(SRV_FILES
-  UpdateWorld.srv
   DyeGroup.srv
   GetGroupInfo.srv
   GetGroupNames.srv
-  RegisterGroup.srv
 )
 
 set(ACT_FILES
