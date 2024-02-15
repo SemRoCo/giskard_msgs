@@ -16,6 +16,7 @@ set(MSG_DEPS
 
 set(MSG_FILES
   GiskardError.msg
+  ExecutionState.msg
   Weights.msg
   MotionGoal.msg
   Monitor.msg
