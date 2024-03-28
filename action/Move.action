@@ -1,7 +1,6 @@
 # goal
 
 # definitions of possible values to use as type
-# the following types can be added to create new combinations. e.g. PLAN_AND_EXECUTE = PLAN_ONLY + EXECUTE
 int64 UNDEFINED=0
 int64 EXECUTE=1 # closed loop -> execute in real time; open loop -> plan and execute
 int64 PROJECTION=2 # plan only
