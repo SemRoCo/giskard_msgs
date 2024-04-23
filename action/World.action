@@ -36,16 +36,7 @@ string group_name
 
 giskard_msgs/WorldBody body
 
-# Identify any link in the world via group and link name.
-# There are some conventions:
-# If parent_link_group == '' and parent_link == '':
-#	root link of world is assumed, usually 'map'
-# If parent_link_group == '' and parent_link != '':
-#	group is assumed to be the robot
-# If parent_link_group != '' and parent_link == '':
-#	root link of group is assumed
-string parent_link_group
-string parent_link
+giskard_msgs/LinkName parent_link
 
 # Pose where new bodies will be spawned. Pose of root link of the world body relative to parent_link
 geometry_msgs/PoseStamped pose

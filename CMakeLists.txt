@@ -22,6 +22,7 @@ set(MSG_FILES
   Monitor.msg
   CollisionEntry.msg
   WorldBody.msg
+  LinkName.msg
  )
 
 set(SRV_FILES
