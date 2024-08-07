@@ -1,26 +1,27 @@
-<package format="2">
-  <name>giskard_msgs</name>
-  <version>0.1.0</version>
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+    <name>giskard_msgs</name>
+    <version>0.1.0</version>
+    <description>
+        Some auxiliary messages for giskard controller nodes.
+    </description>
+    <maintainer email="stelter@uni-bremen.de">Simon Stelter</maintainer>
+    <author email="stelter@uni-bremen.de">Simon Stelter</author>
+    <license>BSD</license>
 
-  <description>
-    Some auxiliary messages for giskard controller nodes.
-  </description>
+    <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <author email="blandc@cs.uni-bremen.de">Mihai Pomarlan</author>
-  <author email="georg.bartels@cs.uni-bremen.de">Georg Bartels</author>
-  <maintainer email="blandc@cs.uni-bremen.de">Mihai Pomarlan</maintainer>
-  <license>BSD</license>
+    <build_depend>std_msgs</build_depend>
+    <build_depend>geometry_msgs</build_depend>
+    <build_depend>sensor_msgs</build_depend>
+    <build_depend>trajectory_msgs</build_depend>
+    <build_depend>shape_msgs</build_depend>
+    <buildtool_depend>rosidl_default_generators</buildtool_depend>
+    <exec_depend>rosidl_default_runtime</exec_depend>
+    <member_of_group>rosidl_interface_packages</member_of_group>
 
-  <buildtool_depend>catkin</buildtool_depend> 
-
-  <depend>message_generation</depend>
-  <depend>message_runtime</depend>
-  <depend>actionlib</depend>
-  <depend>actionlib_msgs</depend>
-  <depend>std_msgs</depend>
-  <depend>geometry_msgs</depend>
-  <depend>sensor_msgs</depend>
-  <depend>trajectory_msgs</depend>
-  <depend>shape_msgs</depend>
-
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
 </package>
