@@ -19,6 +19,9 @@ GiskardError error
 
 # planned trajectory
 trajectory_msgs/JointTrajectory trajectory
+
+# final execution state
+ExecutionState execution_state
 ---
 # feedback
 
