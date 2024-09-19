@@ -9,8 +9,9 @@ int64 PROJECTION=2 # plan only
 int64 type
 
 # describe a motion with a list of motion goals and monitors
-giskard_msgs/MotionGoal[] goals
-giskard_msgs/Monitor[] monitors
+giskard_msgs/MotionGoalNode[] goals
+giskard_msgs/MotionGoalNode[] tasks
+giskard_msgs/MotionGoalNode[] monitors
 
 ---
 # result
