@@ -1,8 +1,8 @@
 std_msgs/Header header
 
 int64 goal_id
-giskard_msgs/MotionGoalNode[] tasks
-giskard_msgs/MotionGoalNode[] monitors
+giskard_msgs/MotionGraphNode[] tasks
+giskard_msgs/MotionGraphNode[] monitors
 float64[] task_state
 float64[] task_life_cycle_state
 float64[] monitor_state
