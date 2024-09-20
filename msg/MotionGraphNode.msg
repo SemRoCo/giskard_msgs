@@ -1,5 +1,5 @@
-string name # unique identifier for the motion goal
-string motion_goal_class # class name of the motion goal
+string name # unique identifier
+string class_name # python class name
 
 string kwargs # kwargs for the __init__ function of the motion goal class in json format
 # The following parameters encode logical expressions in python syntax as strings, using monitor names to define conditions when the goal is active
