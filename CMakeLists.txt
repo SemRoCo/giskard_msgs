@@ -18,7 +18,7 @@ set(MSG_FILES
   GiskardError.msg
   ExecutionState.msg
   Weights.msg
-  MotionGraphNode.msg
+  MotionStatechartNode.msg
   CollisionEntry.msg
   WorldBody.msg
   LinkName.msg
