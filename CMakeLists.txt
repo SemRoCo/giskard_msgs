@@ -25,6 +25,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/GetGroupInfo.srv"
   "srv/GetGroupNames.srv"
   "action/Move.action"
+  "action/JsonAction.action"
   "action/World.action"
   DEPENDENCIES
     std_msgs
